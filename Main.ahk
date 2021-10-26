@@ -38,6 +38,8 @@ SubmitGui:
     {
         revisedLyrics := StrReplace(revisedLyrics, "  ", " ")
     }
+    ; Delete spaces if they appear at the start of a line
+    revisedLyrics := StrReplace(revisedLyrics, "`n ", "`n")
     ; Delete spaces if they're at the end of a line
     revisedLyrics := StrReplace(revisedLyrics, " `n", "`n")
     GuiControl,, LyricsField, % revisedLyrics

@@ -4,7 +4,7 @@ This simple application... fixes your lyrics (!) by correcting capitalization er
 
 ### How to use
 
-Download the executable in Releases, open it, paste the lyrics, and click **Fix Lyrics**. 
+Download the zip file in [Releases](https://github.com/Baconfry/lyrics-fixer/releases), extract it and run LyricsFixer, paste the lyrics, and click **Fix Lyrics**. 
 
 ### What does it exactly do?
 This is documented in the code, see `LyricsFixer.ahk` -> `FixLyrics()`. The application:

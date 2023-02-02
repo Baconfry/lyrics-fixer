@@ -10,7 +10,7 @@
 ; Global variables
 APP_NAME        := "Lyrics Fixer"
 , APP_VERSION   := "2.0.0.0"
-, APP_DEBUG     := 1
+, APP_DEBUG     := 0
 ; This code appears only in the compiled script
 /*@Ahk2Exe-Keep
 #NoTrayIcon
@@ -50,7 +50,7 @@ FixLyrics(*)
 
     ; Replace:
     ; (3) Multiple trailing spaces with single spaces
-    ; (4) Multiple trailing line feeds with single line breaks
+    ; (4) Multiple trailing line feeds with single line feeds
     revisedLyrics := RegExReplace(revisedLyrics, " +", " ")                         ; (3)
     ; Three line feeds are written instead of two because the author of the lyrics may
     ; have intended to seperate the two groups into paragraphs (give that extra free line)
@@ -59,10 +59,10 @@ FixLyrics(*)
     }
 
     ; Capitalize:
-    ; (5) The first letter of every line (if the first character if a letter)
+    ; (5) The first letter of every line
     ; (6) The first letter after a parenthesis, apostrophe, or a quotation mark
     ;       (only if these symbols are the first in every line)
-    ; (7) The next letter after a question mark or a period (followed by a space)
+    ; (7) The next letter after a question mark or a period that is followed by a space
     revisedLyrics := RegExReplace(revisedLyrics, "m)^\w", "$U0")                    ; (5)
     revisedLyrics := RegExReplace(revisedLyrics, "m)(^\(\w)|(^'\w)|(^`"\w)", "$U0") ; (6)
     revisedLyrics := RegExReplace(revisedLyrics, "(\?\s\w)|(\.\s\w)", "$U0")        ; (7)
